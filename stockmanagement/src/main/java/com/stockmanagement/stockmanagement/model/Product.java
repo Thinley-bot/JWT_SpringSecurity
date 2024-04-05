@@ -1,7 +1,9 @@
 package com.stockmanagement.stockmanagement.model;
 
 import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
 import java.util.Date;
 @Entity
 public class Product {
@@ -14,7 +16,6 @@ public class Product {
     @Column(name = "productCategory", length = 255,nullable = false)
     private String productCategory;
     private float price;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdated;
 
@@ -57,16 +58,6 @@ public class Product {
 
     public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
-    }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productCategory='" + productCategory + '\'' +
-                ", price=" + price +
-                ", lastUpdated=" + lastUpdated +
-                '}';
     }
 }
